@@ -27,11 +27,6 @@ Form &				 Form::operator=(  Form const & rhs )
 	return *this;
 }
 
-std::string const	Form::getName()const {return _name;}
-int			Form::getSignGrade()const {return _signGrade;}
-int			Form::getExecGrade()const {return _execGrade;}
-bool		Form::getStatus()const {return _status;}
-
 void		Form::beSigned(Bureaucrat &bureaucrat)
 {
 	if (bureaucrat.getGrade() <= _signGrade)
@@ -46,6 +41,16 @@ void		Form::beSigned(Bureaucrat &bureaucrat)
     }
 }
 
+void		Form::execute(Bureaucrat const & executor) const
+{
+	if (!this->_status)
+		throw Form::NoteSignedException();
+	if (executor.getGrade() >= this->_execGrade)
+		throw Form::GradeTooLowException();
+	else 
+		return ;
+}
+
 std::ostream &			operator<<( std::ostream & o,  Form const & i )
 {
 	if (i.getStatus())
@@ -58,3 +63,10 @@ std::ostream &			operator<<( std::ostream & o,  Form const & i )
 		<< " haven't been signed" << std::endl;
 	return o;
 }
+
+std::string const	Form::getName()const {return _name;}
+int			Form::getSignGrade()const {return _signGrade;}
+int			Form::getExecGrade()const {return _execGrade;}
+bool		Form::getStatus()const {return _status;}
+void		Form::setTarget(std::string set) { _target = set;}
+void		Form::setStatus(bool set) { _status = set;}

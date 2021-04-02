@@ -19,7 +19,7 @@ int main(void)
     */
 
     /*pour lex 01 */
-    try
+    /*try
     {
         Form test("papa", 4, 1);
         std::cout << test;
@@ -33,7 +33,9 @@ int main(void)
         std::cerr << e.what() << std::endl ;
 
     }
+     */
 
+    
 
     return 0;
 }

@@ -70,6 +70,12 @@ void	Bureaucrat::signForm(Form & form)
 	}
 }
 
+void	Bureaucrat::executeForm(Form const & form)
+{
+	std::cout << _name << " try to execute " << form.getName() << ": ";
+	form.exec(*this); 
+}
+
 std::string const    Bureaucrat::getName()const{return _name;}
 int    Bureaucrat::getGrade()const{return _grade;}
 
