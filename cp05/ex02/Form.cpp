@@ -63,7 +63,7 @@ std::ostream &			operator<<( std::ostream & o,  Form const & i )
 		<< " haven't been signed" << std::endl;
 	return o;
 }
-
+std::string Form::getTarget()const {return _target;}
 std::string const	Form::getName()const {return _name;}
 int			Form::getSignGrade()const {return _signGrade;}
 int			Form::getExecGrade()const {return _execGrade;}

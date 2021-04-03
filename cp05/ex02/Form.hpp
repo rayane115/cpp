@@ -50,7 +50,10 @@ public:
 	class NoteSignedException : public std::exception
 	{
 	public:
-		virtual const char *what() const throw();
+		virtual const char *what() const throw()
+		{
+			return "**";
+		}
 	};
 private:
 	Form();
