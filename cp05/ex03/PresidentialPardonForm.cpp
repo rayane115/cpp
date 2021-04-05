@@ -35,4 +35,5 @@ void	PresidentialPardonForm::exec(Bureaucrat &bureaucrat) const
 	{
 		std::cout << e.what() << ", can't be executed" << '\n';
 	}
+
 }

@@ -6,8 +6,6 @@ Bureaucrat::Bureaucrat(){
 }
 
 Bureaucrat::~Bureaucrat(){
-     std::cout << "destructeur appele" << std::endl;
-    
 }
 
 Bureaucrat::Bureaucrat(std::string const name, int grade) :_name(name), _grade(grade)

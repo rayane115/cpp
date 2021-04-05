@@ -6,7 +6,6 @@ Bureaucrat::Bureaucrat(){
 }
 
 Bureaucrat::~Bureaucrat(){
-     std::cout << "destructeur appele" << std::endl;
     
 }
 

@@ -3,6 +3,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 int main(void)
 {
    /*pour lex 00 */ 
@@ -39,7 +40,7 @@ int main(void)
      */
 
     /*pour lex 02*/
-
+    /*
     try
     {
         //////////////////////
@@ -70,6 +71,51 @@ int main(void)
     {
         std::cerr << e.what() << std::endl ;
 
+    }
+    */
+  
+    /*pour lexo 3 */
+    try
+    {
+        Bureaucrat test("papa", 4);
+        Intern formulaire;
+        Form    *formulairetest;
+        formulairetest = formulaire.makeForm("shrubbery creation", "maison");
+        if (formulairetest != NULL)
+        {
+            formulairetest->beSigned(test);
+            test.executeForm(*formulairetest);
+        }
+        delete formulairetest;
+
+        std::cout << "**************************************" << std::endl;
+
+        Bureaucrat test2("maman", 1);
+        Form    *formulairetest2;
+        formulairetest2 = formulaire.makeForm("presidential pardon", "appartement");
+        if (formulairetest2 != NULL)
+        {
+            formulairetest2->beSigned(test);
+            test.executeForm(*formulairetest2);
+        }
+        delete formulairetest2;
+
+         std::cout << "**************************************" << std::endl;
+
+        Bureaucrat test3("tonton", 2);
+        Form    *formulairetest3;
+        formulairetest3 = formulaire.makeForm("robotomy request", "immeuble");
+        if (formulairetest3 != NULL)
+        {
+            formulairetest3->beSigned(test);
+            test.executeForm(*formulairetest3);
+        }
+        delete formulairetest3;
+
+    }
+    catch(std::exception &e)
+    {
+        std::cerr << e.what() << std::endl ;
     }
 
 
