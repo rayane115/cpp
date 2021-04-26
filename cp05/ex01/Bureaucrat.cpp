@@ -68,6 +68,16 @@ void	Bureaucrat::signForm(Form & form)
 	}
 }
 
+const char * Bureaucrat::GradeTooHighException::what()const throw()
+{
+	 return "*The grade is to high*";
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw()
+{
+	  return "*The grade is to low*";
+}
+
 std::string const    Bureaucrat::getName()const{return _name;}
 int    Bureaucrat::getGrade()const{return _grade;}
 

@@ -5,7 +5,7 @@ int main(void)
     
     try
     {
-        Bureaucrat test("toto", -1);
+        Bureaucrat test("toto", 155);
         std::cout << test;
         //test.decrease();
         //test.increase();

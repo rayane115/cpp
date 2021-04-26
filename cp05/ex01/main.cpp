@@ -23,7 +23,7 @@ int main(void)
     {
         Form test("papa", 4, 1);
         std::cout << test;
-        Bureaucrat test2("maman", 4);
+        Bureaucrat test2("maman", 5);
         std::cout << test2;
         test.beSigned(test2);
 

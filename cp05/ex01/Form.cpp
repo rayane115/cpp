@@ -46,6 +46,17 @@ void		Form::beSigned(Bureaucrat &bureaucrat)
     }
 }
 
+const char * Form::GradeTooHighException::what()const throw()
+{
+	 return "*The grade is to high*";
+}
+
+const char* Form::GradeTooLowException::what() const throw()
+{
+	  return "*The grade is to low*";
+}
+
+
 std::ostream &			operator<<( std::ostream & o,  Form const & i )
 {
 	if (i.getStatus())

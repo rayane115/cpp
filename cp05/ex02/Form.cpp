@@ -45,10 +45,25 @@ void		Form::execute(Bureaucrat const & executor) const
 {
 	if (!this->_status)
 		throw Form::NoteSignedException();
-	if (executor.getGrade() >= this->_execGrade)
+	if (executor.getGrade() > this->_execGrade)
 		throw Form::GradeTooLowException();
 	else 
 		return ;
+}
+
+const char * Form::GradeTooHighException::what()const throw()
+{
+	 return "*The grade is to high*";
+}
+
+const char* Form::GradeTooLowException::what() const throw()
+{
+	  return "*The grade is to low*";
+}
+
+const char* 		Form::NoteSignedException::what() const throw()
+{
+	return "The form is not signed";
 }
 
 std::ostream &			operator<<( std::ostream & o,  Form const & i )
