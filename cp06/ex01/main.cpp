@@ -45,7 +45,5 @@ int main()
     std::cout << "nbr = " << data_d->n << std::endl;
     std::cout << "s2 = " << data_d->s2 << std::endl;
     delete data_s;
-    delete data_d;
-
     return 0;
 }
