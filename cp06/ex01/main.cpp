@@ -3,6 +3,9 @@
 #include <string>
 #include <cstdlib>
 
+
+/*L' reinterpret_cast opérateur peut être utilisé pour les conversions telles que char* to int*
+reinterpret_cast opérateur convertit une valeur de pointeur null en valeur de pointeur null du type de destination.*/
 struct Data { std::string s1; int n; std::string s2; };
 
 void * serialize(void)

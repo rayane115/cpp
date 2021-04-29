@@ -1,4 +1,5 @@
 #include "Convertisseur.hpp"
+/*En général, vous utilisez static_cast lorsque vous souhaitez convertir des types de données numériques*/
 
 Convertisseur::Convertisseur(std::string input): _input(input), _status(false)
 {
