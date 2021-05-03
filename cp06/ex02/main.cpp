@@ -25,7 +25,7 @@ void identify_from_pointer(Base * p)
     A * instance_a = dynamic_cast<A*>(p);
     if (instance_a != NULL)
     {
-        std::cout << "A" << std::endl;
+        std::cout << "A"  << std::endl;
     }
     /*********************/
     B * instance_b = dynamic_cast<B*>(p);
