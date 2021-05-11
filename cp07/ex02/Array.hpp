@@ -12,7 +12,7 @@ class Array
     public:
         Array();
         ~Array();
-		Array( const Array & copy );
+		Array( const Array& copy );
 		T & operator=(const T & copy );
 		T &	operator[](int i);
         Array(unsigned int n);

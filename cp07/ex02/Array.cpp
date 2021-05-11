@@ -19,7 +19,8 @@ Array<T>::Array( const Array & copy )
 {
     /*constructeur de copie avec mes test*/
 	
-	/**this = copy;	
+/*	*this = copy;	
+
 	std::cout << " avant le test " << std::endl;
 	std::cout << "celle qui se fait copier = " << copy._array_type[0] << copy._array_type[1] << copy._array_type[3] << std::endl;
 	std::cout << "celle qui a copier  = " << this->_array_type[0] << this->_array_type[1] << this->_array_type[3] << std::endl;
@@ -27,10 +28,18 @@ Array<T>::Array( const Array & copy )
 	std::cout << "maintenant je vais modifier une valeur normalement elle devrait modifier aussi this et re imprimer le tout " << std::endl;
 	this->_array_type[0] = 999;
 	std::cout << "celle qui se fait copier = " << copy._array_type[0] << copy._array_type[1] << copy._array_type[3] << std::endl;
-	std::cout << "celle qui a copier  = " << this->_array_type[0] << this->_array_type[1] << this->_array_type[3] << std::endl;*/
-
-	this->_array_type = new T[_n];
+	std::cout << "celle qui a copier  = " << this->_array_type[0] << this->_array_type[1] << this->_array_type[3] << std::endl;
+*/
+	this->_array_type = new T[copy._n];
+//	std::cout << "mon n =  " << _n <<  std::endl;
+	for(int i = 0; i < copy._n ; i++)
+	{
+		this->_array_type[i] = copy._array_type[i];
+	}
 	this->_n = copy._n;
+	//this->_array_type[0] = 233;
+	//std::cout << "celle qui se fait copier = " << copy._array_type[0] << copy._array_type[1] << copy._array_type[3] << std::endl;
+	//std::cout << "celle qui a copier  = " << this->_array_type[0] << this->_array_type[1] << this->_array_type[3] << std::endl;
 }
 
 template<typename T>
@@ -40,8 +49,8 @@ T &				Array<T>::operator=(const T & copy )
 	je vais devoir faire une deep copy*/
 
 	std::cout << "oeoeoeoeo      gggfg" << std::endl;
-	this->_array_type = new T[_n];
-	this->_n = copy._n;
+	//this->_array_type = new T[_n];
+	//this->_n = copy._n;
 	return *this;
 }
 

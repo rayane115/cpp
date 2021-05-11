@@ -102,13 +102,13 @@ int main()
 
 		/***********************************test_deep surcharge operator= ********************************/
 
-		Array<char>inst6;
+		Array<char> inst6;
 
 		inst6 = inst_char;
 
-		std::cout << "inst6 test deep surcharge[5] : " << inst6[5] << std::endl;
-		inst6[5] = 'a';
-		 std::cout << "inst6 test deep surcharge[5] apres modif : " << inst6[5] << std::endl;
+	//	std::cout << "inst6 test deep surcharge[5] : " << inst6[5] << std::endl;
+	//	inst6[5] = 'a';
+	//	 std::cout << "inst6 test deep surcharge[5] apres modif : " << inst6[5] << std::endl;
 	}
 
 	catch(std::string const & erreur)
