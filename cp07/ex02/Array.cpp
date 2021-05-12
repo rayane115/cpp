@@ -48,7 +48,7 @@ T &				Array<T>::operator=(const T & copy )
  /*  Surcharge d'operateur qui permet aussi de faire une copie 
 	je vais devoir faire une deep copy*/
 
-	std::cout << "oeoeoeoeo      gggfg" << std::endl;
+	std::cout << "**************************************" << std::endl;
 	//this->_array_type = new T[_n];
 	//this->_n = copy._n;
 	return *this;
@@ -70,7 +70,8 @@ T & Array<T>::operator[](int i)
 template<typename T>
 Array<T>::~Array()
 {
-
+	delete [] this->_array_type;
+	//_array_type = NULL ;
 }
 
 template<typename T>

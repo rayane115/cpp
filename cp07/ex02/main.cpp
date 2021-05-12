@@ -102,9 +102,10 @@ int main()
 
 		/***********************************test_deep surcharge operator= ********************************/
 
-		Array<char> inst6;
+		Array<int> inst6;
 
-		inst6 = inst_char;
+		inst6 = inst3;
+
 
 	//	std::cout << "inst6 test deep surcharge[5] : " << inst6[5] << std::endl;
 	//	inst6[5] = 'a';
