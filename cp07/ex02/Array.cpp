@@ -4,14 +4,13 @@
 template<typename T>
 Array<T>::Array(): _n(0), _array_type(NULL)
 {
-    //std::cout << "test" << std::endl;
+
 }
 
 template<typename T>
 Array<T>::Array(unsigned int n) : _n(n)
 {
     _array_type = new T[_n];
-    //std::cout << "salut" << std::endl ;
 }
 
 template<typename T>
@@ -31,7 +30,6 @@ Array<T>::Array( const Array & copy )
 	std::cout << "celle qui a copier  = " << this->_array_type[0] << this->_array_type[1] << this->_array_type[3] << std::endl;
 */
 	this->_array_type = new T[copy._n];
-//	std::cout << "mon n =  " << _n <<  std::endl;
 	for(int i = 0; i < copy._n ; i++)
 	{
 		this->_array_type[i] = copy._array_type[i];
@@ -43,14 +41,17 @@ Array<T>::Array( const Array & copy )
 }
 
 template<typename T>
-T &				Array<T>::operator=(const T & copy )
+Array<T> &  Array<T>::operator=(const Array & copy )
 {
  /*  Surcharge d'operateur qui permet aussi de faire une copie 
 	je vais devoir faire une deep copy*/
 
-	std::cout << "**************************************" << std::endl;
-	//this->_array_type = new T[_n];
-	//this->_n = copy._n;
+	this->_array_type = new T[_n];
+	for(int i = 0; i < copy._n ; i++)
+	{
+		this->_array_type[i] = copy._array_type[i];
+	}
+	this->_n = copy._n;
 	return *this;
 }
 
@@ -71,7 +72,7 @@ template<typename T>
 Array<T>::~Array()
 {
 	delete [] this->_array_type;
-	//_array_type = NULL ;
+	this->_array_type = NULL ;
 }
 
 template<typename T>

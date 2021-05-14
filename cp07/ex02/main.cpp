@@ -98,17 +98,17 @@ int main()
 
 		/************************************test_deep constructeur par copy *******************************/
 
-		Array <int> inst5(inst_int);
+	//	Array <int> inst5(inst_int);
 
 		/***********************************test_deep surcharge operator= ********************************/
 
-		Array<int> inst6;
+	//	Array<char> inst6;
 
-		inst6 = inst3;
+	//	inst6 = inst_char;
 
 
-	//	std::cout << "inst6 test deep surcharge[5] : " << inst6[5] << std::endl;
-	//	inst6[5] = 'a';
+	//	std::cout << "inst6 test deep surcharge[5] : " << inst_char[5] << std::endl;
+	//	inst6[5] = 'w';
 	//	 std::cout << "inst6 test deep surcharge[5] apres modif : " << inst6[5] << std::endl;
 	}
 

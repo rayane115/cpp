@@ -13,7 +13,7 @@ class Array
         Array();
         ~Array();
 		Array( const Array& copy );
-		T & operator=(const T & copy );
+		Array & operator=(const Array & copy );
 		T &	operator[](int i);
         Array(unsigned int n);
 
