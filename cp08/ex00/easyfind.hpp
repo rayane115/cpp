@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <iostream>
+#include <list>
 
 template <typename T>
 void	easyfind(T const & conteneur, int find_nbr)
