@@ -1,5 +1,22 @@
 #include "whatever.hpp"
 
+class Awesome 
+{
+    public:
+    Awesome( int n ) : _n( n ) {}
+    bool operator==( Awesome const & rhs ) const { return (this->_n == rhs._n); }
+    bool operator!=( Awesome const & rhs ) const { return (this->_n != rhs._n); }
+    bool operator>( Awesome const & rhs ) const { return (this->_n > rhs._n); }
+    bool operator<( Awesome const & rhs ) const { return (this->_n < rhs._n); }
+    bool operator>=( Awesome const & rhs ) const { return (this->_n >= rhs._n); }
+    bool operator<=( Awesome const & rhs ) const { return (this->_n <= rhs._n); }
+    int get()const{return _n;}
+    private:
+    int _n;
+};
+
+std::ostream & operator<<( std::ostream & flux, Awesome const & rhs ) { flux << rhs.get(); return flux; }
+
 int main()
 {
     std::cout << "\e[31m\e[1m/**************Funtion swap*************/ " <<  "\e[0m" << std::endl;
@@ -106,6 +123,45 @@ int main()
         std::cout << "char : mon m est plus grand n = "<<  max<char>(m, n) <<  std::endl;
     else
         std::cout << "char : mon n est plus grand ou egal a m = "<<  max<char>(m, n) << std::endl;
+
+    std::cout << "\e[31m\e[1m/**************test apres erreur de la correction*************/ " <<  "\e[0m" << std::endl;
+    Awesome test1(24);
+    Awesome test2(24);
+
+    std::cout << "min( test1, test2 ) = " << ::min<Awesome>( test1, test2 ) << std::endl;
+    std::cout << "max( test1, test2 ) = " << ::max<Awesome>( test1, test2 ) << std::endl;
+
+    if (test1 == test2)
+    {
+       std::cout << "test1 = " << test1 << ", test2 = " << test2 << ", ils sont tout les deux identique" << std::endl;
+    }
+
+    if (test1 != test2)
+    {
+        std::cout << "test1 = " << test1 << ", test2 = " << test2 << ", ils sont different" << std::endl;
+    }
+    if (test1 > test2)
+    {
+        std::cout << "test1 = " << test1 << ", test2 = " << test2 << ", test1 est plus grand que test2" << std::endl;
+    }
+    if (test1 < test2)
+    {
+        std::cout << "test1 = " << test1 << ", test2 = " << test2 << ", test1 est plus petit que test2" << std::endl;
+    }
+    if (test1 >= test2)
+    {
+        std::cout << "test1 = " << test1 << ", test2 = " << test2 << ", test1 est soit plus grand ou soit egal a test2" << std::endl;
+    }
+    if (test1 <= test2)
+    {
+        std::cout << "test1 = " << test1 << ", test2 = " << test2 << ", test1 est soit plus petit ou soit egal a test2" << std::endl;
+    }
+
+    ::swap<Awesome>(test1, test2);
+    std::cout << "Apres mon swap : test1 = " << test1 << ", test2 = " << test2 << std::endl;
+    
+
+
     std::cout << "\e[31m\e[1m/**************Main du sujet*************/ " <<  "\e[0m" << std::endl;
     {
     int a = 2;

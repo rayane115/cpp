@@ -6,7 +6,7 @@
 
 
 template <typename T>
-void iter(T  * array, int taille, void (*ptr)(T &))
+void iter(T  * array, int taille, void (*ptr)(const T &))
 {
     int i(0);
     while (i < taille)
@@ -18,7 +18,7 @@ void iter(T  * array, int taille, void (*ptr)(T &))
 }
 
 template<typename T>
-void    function(T & test)
+void    function(const T & test)
 {
     std::cout<< test <<   std::endl;
 }

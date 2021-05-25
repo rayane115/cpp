@@ -3,11 +3,11 @@
 
 # include <iostream>
 
+
 template<typename S>
 void swap(S & x, S & y)
 {
-    S swap;
-    swap = x;
+    S swap = x /*voila la bonne syntax a mettre, sur une seul ligne vu qu'il attend obligatoirement un int */;
     x = y;
     y = swap;
 }
