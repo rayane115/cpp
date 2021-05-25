@@ -3,7 +3,7 @@
 
 int main()
 {
-    /*main du sujet */
+    std::cout << "\e[31m\e[1m/**************main sujet*************/ " <<  "\e[0m" << std::endl;
     MutantStack<int> mstack;
     mstack.push(5);
     mstack.push(17);
@@ -25,5 +25,26 @@ int main()
         ++it;
     }
     std::stack<int> s(mstack);
+
+	std::cout << "\e[31m\e[1m/**************Test Rayane*************/ " <<  "\e[0m" << std::endl;
+
+	MutantStack<char> mstack_char;
+	mstack_char.push('r');
+	mstack_char.push('a');
+	mstack_char.push('y');
+	mstack_char.push('a');
+	mstack_char.push('n');
+	mstack_char.push('e');
+	mstack_char.push('!');
+	std::cout << mstack_char.top() << std::endl;
+
+	MutantStack<char>::iterator it1 = mstack_char.begin();
+	MutantStack<char>::iterator ite1 = mstack_char.end();
+	while (it1 != ite1)
+	{
+		std::cout << *it1 << std::endl;
+		++it1;
+	}
+
     return 0;
 }

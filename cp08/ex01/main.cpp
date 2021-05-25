@@ -5,24 +5,23 @@ int main()
     try
     {
         std::cout << "\e[31m\e[1m/**************Test simple*************/ " <<  "\e[0m" << std::endl;
-        Span sp(5);
+        Span sp(6);
 
         sp.addNumber(5);
         sp.addNumber(3);
-        sp.addNumber(17);
-        sp.addNumber(17);
-        sp.addNumber(11);
-
+        sp.addNumber(9);
+        sp.addNumber(1);
+        sp.addNumber(4);
+		sp.addNumber(18);
+		
         std::cout << sp.shortestSpan() << std::endl;
         std::cout << sp.longestSpan() << std::endl;
 
-        std::cout << "\e[31m\e[1m/**************Test plage d'int*************/ " <<  "\e[0m" << std::endl;
-        Span sp2(100000);
+		std::cout << "\e[31m\e[1m/**************Test plage d'int*************/ " <<  "\e[0m" << std::endl;
+        Span sp2(1001);
 
-        sp2.addNumber(1, 100000);
-     //   sp2.addNumber(12);
-       // sp2.addNumber(13);
-        
+        sp2.addNumber(1, 1000);
+        sp2.addNumber(12);    
         std::cout << sp2.shortestSpan() << std::endl;
         std::cout << sp2.longestSpan() << std::endl;
 
