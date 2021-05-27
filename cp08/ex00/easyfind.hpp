@@ -6,7 +6,7 @@
 #include <list>
 
 template <typename T>
-void	easyfind(T const & conteneur, int find_nbr)
+void	easyfind(T const & conteneur, const int find_nbr)
 {
 	/*je vais declarer un iterateur pour parcourir mon conteneur et 
 	 verifir si ce qu'il pointe est dans mon conteneur d'int 

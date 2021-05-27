@@ -6,9 +6,6 @@
 #include <string>
 #include <algorithm>
 
-
-
-
 class Span
 {
     public:

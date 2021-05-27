@@ -88,10 +88,10 @@ int    Span::longestSpan(void)
 int    Span::shortestSpan(void)
 {
     /*pour trouver l'interval le plus petit , pour moi la bonne solution 
-    est de soustraire et de stocker ds un nouveau tableau le resultat
-    de nbr[i] - nbr[i + 1] ( en fesant attention a qui est le plus gand pour
-    pas etre dans un nombre negatif) , de tout stocker dans un nouveau tableau
-    et de regarder dans le nouveau tableau le plus petit int */
+    est de trier deja du plus petit au plus grand , apres de faire une soustraction
+    de nbr[i + 1] - nbr[i] et de le stocker dans un nouveau tableau.
+    Apres je regarderais le int le plus petit de mon nouveau tableau et il sera
+    l'interval le plus petit*/
 
     if (_nbr.size() <= 1)
         throw std::string ("Pas assez de int pour checker un interval");
@@ -103,9 +103,6 @@ int    Span::shortestSpan(void)
 	std::vector<int>::const_iterator ite1 = _nbr.end();
     std::vector<int>nbr2;
 
-//	for (std::vector<int>::iterator it=_nbr.begin(); it!=_nbr.end(); ++it)
- //   	std::cout << ' ' << *it;
-//	std::cout << std::endl;
     while(it1 != ite1)
     {
         if (_nbr[i + 1] != *ite1)
@@ -115,8 +112,6 @@ int    Span::shortestSpan(void)
         i++;
         it1++;
     }
-//	for (std::vector<int>::iterator it2=nbr2.begin(); it2!=nbr2.end(); ++it2)
-//		std::cout << ' ' << *it2;
 
     std::vector<int>::const_iterator it = nbr2.begin();
 	std::vector<int>::const_iterator ite = nbr2.end();

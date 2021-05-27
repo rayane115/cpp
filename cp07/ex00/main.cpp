@@ -125,7 +125,7 @@ int main()
         std::cout << "char : mon n est plus grand ou egal a m = "<<  max<char>(m, n) << std::endl;
 
     std::cout << "\e[31m\e[1m/**************test apres erreur de la correction*************/ " <<  "\e[0m" << std::endl;
-    Awesome test1(24);
+    Awesome test1(42);
     Awesome test2(24);
 
     std::cout << "min( test1, test2 ) = " << ::min<Awesome>( test1, test2 ) << std::endl;
