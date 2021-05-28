@@ -12,7 +12,7 @@ int main()
         sp.addNumber(9);
         sp.addNumber(1);
         sp.addNumber(4);
-		sp.addNumber(18);
+		sp.addNumber(100);
 		
         std::cout << sp.shortestSpan() << std::endl;
         std::cout << sp.longestSpan() << std::endl;

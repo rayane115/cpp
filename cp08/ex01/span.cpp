@@ -67,21 +67,23 @@ int    Span::longestSpan(void)
     std::vector<int>::const_iterator it = _nbr.begin();
 	std::vector<int>::const_iterator ite = _nbr.end();
 
-    plusPetit = *it;
-    while (it != ite)
+    //plusPetit = *it;
+	plusPetit = *std::min_element(it, ite);
+    /*while (it != ite)
     {
         if (plusPetit > *it)
             plusPetit = *it;
         it++;
-    }
-    it = _nbr.begin();
-    plusGrand = *it;
-    while (it != ite)
+    }*/
+   // it = _nbr.begin();
+   // plusGrand = *it;
+   /* while (it != ite)
     {
         if (plusGrand < *it)
             plusGrand = *it;
         it++;
-    }
+    }*/
+	plusGrand = *std::max_element(it, ite);
     return (plusGrand - plusPetit);
 }
 
@@ -115,13 +117,7 @@ int    Span::shortestSpan(void)
 
     std::vector<int>::const_iterator it = nbr2.begin();
 	std::vector<int>::const_iterator ite = nbr2.end();
-    plusPetit = *it;
-    while (it != ite)
-    {
-        if (plusPetit > *it)
-            plusPetit = *it;
-        it++;
-    }
-    
+
+    plusPetit = *std::min_element(it, ite);
     return plusPetit;
 }

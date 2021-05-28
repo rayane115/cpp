@@ -31,7 +31,6 @@ class MutantStack : public std::stack<T>
 
 
 
-
 	private:
 		
 };
